@@ -1,0 +1,10 @@
+{
+  "status": "unknown",
+  "food_id": null,
+  "display_name": null,
+  "confidence": "low",
+  "alternatives": [
+    "morog_polao",
+    "bangladeshi_biriyani"
+  ]
+}

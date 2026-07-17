@@ -1,0 +1,12 @@
+{
+  "checkpoint": "/kaggle/working/deshi_digest_stage3_2gpu_20260717-164850/checkpoint-348",
+  "total": 95,
+  "correct": 83,
+  "wrong": 12,
+  "accuracy": 0.8736842105263158,
+  "accuracy_percent": 87.37,
+  "stage1_accuracy_percent": 83.16,
+  "stage2_accuracy_percent": 82.11,
+  "difference_from_stage1": 4.21,
+  "difference_from_stage2": 5.26
+}
