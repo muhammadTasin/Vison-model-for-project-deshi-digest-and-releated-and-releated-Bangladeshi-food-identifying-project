@@ -9,6 +9,29 @@ achieved **87.37% accuracy on the fixed internal 95-image, 19-class
 benchmark**. This is a small internal result, not a claim of universal or
 production-level accuracy.
 
+## What it does
+
+Deshi Digest separates visual identification from downstream nutrition data.
+The model proposes a supported food identifier; the application validates that
+output and asks the user to confirm it before any separate, verified nutrition
+lookup or meal record is created.
+
+```mermaid
+flowchart LR
+    A[User image] --> B[Qwen3-VL base model]
+    B --> C[Stage-3 LoRA adapter]
+    C --> D[Exact label validation]
+    D --> E{Supported and accepted?}
+    E -->|Yes| F[User confirmation]
+    E -->|No| G[Unknown or manual review]
+    F --> H[Separate verified nutrition lookup]
+    H --> I[Meal record]
+```
+
+> **Design boundary:** the vision model identifies a candidate dish. It does
+> not guess exact calories, nutrients, portion weight, allergens, or medical
+> advice from pixels.
+
 ## Current status
 
 | Item | Current value |
@@ -64,6 +87,8 @@ spellings without unsafe substring matching.
 
 ## Evaluation results
 
+![Training-stage benchmark comparison](assets/readme/stage_comparison.svg)
+
 ### Stage comparison
 
 | Stage | Correct | Accuracy | Change from Stage 3 |
@@ -76,6 +101,8 @@ Stage 2 did not outperform Stage 1. Stage 3 is the current best checkpoint on
 this benchmark.
 
 ### Stage-3 per-class accuracy
+
+![Stage-3 accuracy by food class](assets/readme/per_class_accuracy.svg)
 
 | Class | Correct | Total | Accuracy |
 |---|---:|---:|---:|
@@ -100,6 +127,8 @@ this benchmark.
 | `sweet_yogurt` | 5 | 5 | 100% |
 
 ### Observed Stage-3 confusion pairs
+
+![Stage-3 confusion matrix](assets/readme/confusion_matrix.svg)
 
 | Expected | Predicted | Count |
 |---|---|---:|
@@ -145,6 +174,23 @@ redistribute public datasets or private images. Dataset inclusion, licensing,
 deduplication, label normalization, and split isolation require a separate
 audit before a reproducibility claim can be made. See
 [Dataset provenance](docs/DATASETS.md).
+
+## Data sources reviewed
+
+These records are verified public sources relevant to the broader project.
+Their metadata and licenses are confirmed from the linked Mendeley pages, but
+the exact contribution of each source to the Stage-3 manifests is **not yet
+independently verified**.
+
+| Dataset | Published record | Verified scope | License | Stage-3 status |
+|---|---|---|---|---|
+| **DeshiFoodBD** | [v1 · DOI 10.17632/tczzndbprx.1](https://data.mendeley.com/datasets/tczzndbprx/1) | 5,425 labelled images · 19 foods · web and camera sources | CC BY 4.0 | Considered or prepared; exact inclusion under audit |
+| **FoodBD** | [v2 · DOI 10.17632/xh3ghf3jbg.2](https://data.mendeley.com/datasets/xh3ghf3jbg/2) | 3,523 smartphone meal images · polygon labels · 67 categories · 1,837 images with nutrition labels | CC BY 4.0 | Considered or prepared; exact inclusion under audit |
+| **Bangladeshi Dry Food Dataset** | [v1 · DOI 10.17632/gwrf5gphzw.1](https://data.mendeley.com/datasets/gwrf5gphzw/1) | 16,800 images · 48 classes · varied lighting and backgrounds | CC BY 4.0 | Considered or prepared; exact inclusion under audit |
+
+CC BY 4.0 permits reuse subject to attribution and its terms. This repository
+does not redistribute the source datasets. Dataset licensing does not resolve
+the separate licenses for the base model, adapter, code, or future application.
 
 ## Adapter release and download
 
