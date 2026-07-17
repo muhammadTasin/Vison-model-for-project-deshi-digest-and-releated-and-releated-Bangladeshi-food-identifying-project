@@ -1,0 +1,6 @@
+# Versions observed in, or required by, the exported Stage-3 checkpoint.
+# Install a PyTorch build appropriate for the target CPU/GPU separately.
+transformers>=4.57
+peft>=0.19.1
+qwen-vl-utils>=0.0.14
+Pillow>=10

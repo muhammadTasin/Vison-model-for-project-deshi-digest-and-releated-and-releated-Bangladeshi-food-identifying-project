@@ -1,0 +1,2 @@
+{"image":"path/to/hilsa_001.jpg","ground_truth":"hilsa_fish","prediction":"hilsa_fish","sample_id":"external-hilsa-001"}
+{"image":"path/to/rasmalai_001.jpg","ground_truth":"rasmalai","prediction":"roshgolla","sample_id":"external-roshmalai-001"}

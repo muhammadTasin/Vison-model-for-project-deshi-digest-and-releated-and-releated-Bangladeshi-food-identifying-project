@@ -1,0 +1,12 @@
+expected,predicted,count
+roshmalai,roshogolla,2
+roshmalai,sweet_yogurt,1
+morog_polao,bangladeshi_biriyani,1
+morog_polao,beguni,1
+morog_polao,khichuri,1
+kacha_golla,bakorkhani,1
+kacha_golla,potato_bhorta,1
+bakorkhani,beguni,1
+fuchka,kebab,1
+nehari,haleem,1
+potato_bhorta,paratha,1

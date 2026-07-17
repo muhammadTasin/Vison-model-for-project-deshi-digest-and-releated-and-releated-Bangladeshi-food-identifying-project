@@ -1,0 +1,15 @@
+.env
+.env.*
+kaggle.json
+*.key
+*.pem
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+wandb/
+outputs/
+checkpoints/
+*.tmp
+.venv/
+venv/
+.DS_Store

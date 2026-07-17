@@ -1,0 +1,21 @@
+{
+  "aloo_bhorta": "potato_bhorta",
+  "alu_bhorta": "potato_bhorta",
+  "bangladeshi_biryani": "bangladeshi_biriyani",
+  "biryani": "bangladeshi_biriyani",
+  "biriyani": "bangladeshi_biriyani",
+  "egg_omelet": "egg_omelette",
+  "hilsa": "hilsa_fish",
+  "ilish": "hilsa_fish",
+  "kachagolla": "kacha_golla",
+  "morog_pulao": "morog_polao",
+  "nihari": "nehari",
+  "omelette": "egg_omelette",
+  "parota": "paratha",
+  "porota": "paratha",
+  "rasgulla": "roshogolla",
+  "rasmalai": "roshmalai",
+  "roshgolla": "roshogolla",
+  "roshomalai": "roshmalai",
+  "rosogolla": "roshogolla"
+}
