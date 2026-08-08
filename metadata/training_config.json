@@ -1,0 +1,35 @@
+{
+  "base_model": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_type": "qwen3_vl",
+  "template": "qwen3_vl",
+  "tuning_method": "LoRA",
+  "lora_rank": 4,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "quantization": {
+    "method": "bitsandbytes",
+    "bits": 4,
+    "type": "nf4",
+    "double_quantization": true,
+    "compute_dtype": "float16"
+  },
+  "training": {
+    "epochs": 1.5,
+    "learning_rate": 2e-05,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "effective_batch_size": 16,
+    "scheduler": "cosine",
+    "warmup_ratio": 0.05,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "max_pixels": 262144,
+    "max_length": 512,
+    "image_max_token_num": 128,
+    "gradient_checkpointing": true
+  },
+  "hardware": {
+    "gpu": "NVIDIA Tesla T4",
+    "gpu_count": 2
+  }
+}

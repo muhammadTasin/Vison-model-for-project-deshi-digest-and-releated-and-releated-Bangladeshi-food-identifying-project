@@ -1,0 +1,23 @@
+{
+  "checkpoint-500": {
+    "old_food_accuracy": 89.95,
+    "pithanet_accuracy": 91.64,
+    "overall_accuracy": 90.56,
+    "macro_accuracy": 88.89,
+    "balance_score": 89.95
+  },
+  "checkpoint-600": {
+    "old_food_accuracy": 90.11,
+    "pithanet_accuracy": 91.64,
+    "overall_accuracy": 90.66,
+    "macro_accuracy": 88.89,
+    "balance_score": 90.11
+  },
+  "checkpoint-645": {
+    "old_food_accuracy": 90.42,
+    "pithanet_accuracy": 91.64,
+    "overall_accuracy": 90.86,
+    "macro_accuracy": 89.09,
+    "balance_score": 90.42
+  }
+}

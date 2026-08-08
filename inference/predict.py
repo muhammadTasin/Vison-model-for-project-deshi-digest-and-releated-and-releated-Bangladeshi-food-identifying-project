@@ -35,6 +35,14 @@ CANONICAL_CLASSES = (
     "roshogolla",
     "roshmalai",
     "sweet_yogurt",
+    "bhapa_pitha",
+    "chitoi_pitha",
+    "jamai_pitha",
+    "nakshi_pitha",
+    "naru",
+    "patishapta_pitha",
+    "puli_pitha",
+    "teler_pitha",
 )
 
 
@@ -44,7 +52,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("image", type=Path, help="Path to one local image")
     parser.add_argument(
-        "--adapter", type=Path, required=True, help="Extracted checkpoint-348 directory"
+        "--adapter", type=Path, required=True, help="Stage-4 adapter directory"
     )
     parser.add_argument(
         "--base-model", default="Qwen/Qwen3-VL-2B-Instruct", help="Base model ID or path"
@@ -135,7 +143,7 @@ def run_inference(args: argparse.Namespace) -> str:
     ]
 
     base_model = Qwen3VLForConditionalGeneration.from_pretrained(
-        args.base_model, torch_dtype="auto", device_map="auto"
+        args.base_model, torch_dtype="auto", device_map="auto", attn_implementation="sdpa"
     )
     model = PeftModel.from_pretrained(base_model, str(args.adapter))
     model.eval()
@@ -155,7 +163,7 @@ def run_inference(args: argparse.Namespace) -> str:
     inputs = inputs.to(model.device)
 
     with torch.inference_mode():
-        generated = model.generate(**inputs, max_new_tokens=args.max_new_tokens)
+        generated = model.generate(**inputs, max_new_tokens=args.max_new_tokens, do_sample=False, temperature=0)
     trimmed = [output[len(source) :] for source, output in zip(inputs.input_ids, generated)]
     return processor.batch_decode(
         trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False

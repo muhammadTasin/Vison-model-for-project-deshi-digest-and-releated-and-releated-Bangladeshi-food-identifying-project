@@ -13,3 +13,24 @@ checkpoints/
 .venv/
 venv/
 .DS_Store
+
+# Stage-4 release safety: do not commit raw data, run state, or base models.
+datasets/
+raw_data/
+data/raw/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.jsonl
+optimizer.pt
+scheduler.pt
+scaler.pt
+rng_state*.pth
+checkpoint-[0-9]*/
+models/**/pytorch_model*.bin
+models/**/model*.safetensors
+!models/stage4_27class/adapter_model.safetensors
+!models/stage4_27class/adapter_config.json

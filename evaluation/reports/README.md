@@ -1,10 +1,15 @@
 # Evaluation reports
 
-These compact reports document the verified Stage-3 totals from the exported
-adapter archive. Raw prediction JSONL and image paths are not copied into the
-repository. Regenerate reports from an authorized local prediction file with
-`evaluation/evaluate_predictions.py`.
+## Current Stage‑4 reports
 
-- `stage3_checkpoint348_report.json`: overall result and stage comparison
-- `stage3_checkpoint348_per_class.csv`: canonicalized per-class results
-- `stage3_checkpoint348_confusion_pairs.csv`: canonicalized observed errors
+- `stage4_checkpoint645_report.json`: final held-out validation report (905/996; 90.86%)
+- `stage4_checkpoint_comparison.json`: checkpoint 500, 600, and 645 comparison
+- `stage4_checkpoint645_per_class.csv`: 27-class per-class accuracy
+- `stage4_checkpoint645_confusion_summary.json`: sanitized aggregate confusions
+- `stage4_summary.json`: compact Stage‑4 run summary
+
+No raw predictions, images, or absolute-path manifests are published.
+
+## Historical Stage‑3 reports
+
+`stage3_checkpoint348_*` records remain for historical reference. The Stage‑3 95-image benchmark and Stage‑4 996-image held-out validation split are different evaluations and should not be compared as like-for-like headline metrics.

@@ -1,0 +1,22 @@
+{
+  "stage": "Stage-4",
+  "base_model": "Qwen/Qwen3-VL-2B-Instruct",
+  "winner": "checkpoint-645",
+  "num_classes": 27,
+  "training_samples": 6872,
+  "old_food_rehearsal_samples": 2720,
+  "pithanet_unique_training_samples": 4152,
+  "validation_samples": 996,
+  "old_food_validation_samples": 637,
+  "pithanet_validation_samples": 359,
+  "old_food_accuracy": 90.42,
+  "pithanet_accuracy": 91.64,
+  "overall_accuracy": 90.86,
+  "macro_accuracy": 89.09,
+  "quantization": "4-bit NF4",
+  "tuning": "LoRA",
+  "lora_rank": 4,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "training_hardware": "2x NVIDIA Tesla T4"
+}
