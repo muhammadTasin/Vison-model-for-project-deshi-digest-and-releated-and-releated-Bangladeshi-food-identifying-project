@@ -1,25 +1,10 @@
-# Inference example
+# Inference
 
-`predict.py` is a cautious, experimental adapter-loading example. It validates
-the two required adapter files, loads a compatible Qwen3-VL base model, attaches
-the PEFT adapter, generates a short closed-set response, and accepts only an
-exact canonical label or exact alias.
-
-Install a PyTorch build suitable for your platform, then install the repository
-requirements. Extract the release archive and run:
+The current adapter is `../models/stage4_27class`; it requires the separately obtained `Qwen/Qwen3-VL-2B-Instruct` base model. Install the pinned stack in `../requirements.txt`, then review the deterministic MS-Swift command:
 
 ```bash
-python inference/predict.py image.jpg \
-  --adapter ./checkpoint-348 \
-  --aliases inference/label_aliases.json
+python inference/run_stage4.py --image /path/to/image.jpg
+python inference/run_stage4.py --image /path/to/image.jpg --run
 ```
 
-The script intentionally reports `confidence: "uncalibrated"`. The available
-artifacts do not provide calibrated probabilities or validated rejection
-thresholds. A syntactically valid class is not automatically a high-confidence
-prediction.
-
-This script has not been rerun in the original Kaggle environment. Pin the
-base-model revision and dependencies, validate it on the fixed benchmark, and
-test unknown/non-food inputs before application use. See
-[`docs/INFERENCE.md`](../docs/INFERENCE.md).
+The Stage‑4 launcher specifies `model_type=qwen3_vl`, `template=qwen3_vl`, SDPA attention, `max_batch_size=1`, and `temperature=0`. Variable image token lengths are why batching remains one. `predict.py` is retained as a historical experimental Transformers/PEFT example; it is not the recommended Stage‑4 launch path.

@@ -1,5 +1,5 @@
 {
-  "checkpoint": "/kaggle/working/deshi_digest_stage3_2gpu_20260717-164850/checkpoint-348",
+  "checkpoint": "checkpoint-348",
   "total": 95,
   "correct": 83,
   "wrong": 12,
