@@ -1,0 +1,32 @@
+{
+  "train": {
+    "rows": 6872,
+    "unique_image_refs": 6872,
+    "existing_food_rows": 2720,
+    "pithanet_rows": 4152,
+    "classes_present": 27
+  },
+  "validation": {
+    "rows": 996,
+    "unique_image_refs": 996,
+    "existing_food_rows": 637,
+    "pithanet_rows": 359,
+    "classes_present": 27
+  },
+  "exact_image_ref_overlap_train_vs_validation": 0,
+  "duplicate_refs_within_train": 0,
+  "duplicate_refs_within_validation": 0,
+  "refs_with_conflicting_labels": 0,
+  "labels_outside_label_set": [],
+  "pithanet_rows_with_folder_label_mismatch": 0,
+  "same_label_and_filename_in_both_splits": {
+    "count": 356,
+    "existing_food": 0,
+    "pithanet": 356,
+    "note": "name collision or duplicate; undecidable without image bytes"
+  },
+  "not_checked": [
+    "content or near-duplicate images",
+    "label noise"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "PithaNet classes only (8)",
+  "images": {
+    "train": 4152,
+    "validation": 359
+  },
+  "images_hashed_ok": {
+    "train": 4152,
+    "validation": 359
+  },
+  "sha256": {
+    "validation_images_with_byte_identical_train_image": 0,
+    "byte_identical_train_validation_pairs": 0,
+    "byte_identical_pairs_with_different_labels": 0,
+    "duplicate_groups_within_train": 0,
+    "duplicate_groups_within_validation": 0
+  },
+  "near_duplicates": {
+    "threshold_hamming_distance": 5,
+    "hash_bits": 64,
+    "dhash": {
+      "pairs_within_threshold": 2,
+      "pairs_within_threshold_same_label": 2,
+      "validation_images_with_a_match": 2,
+      "pairs_within_threshold_excluding_byte_identical": 2,
+      "validation_images_with_a_match_excluding_byte_identical": 2,
+      "nearest_train_distance_per_validation_image": {
+        "1-5": 2,
+        "6-10": 6,
+        ">10": 351
+      }
+    },
+    "phash": {
+      "pairs_within_threshold": 0,
+      "pairs_within_threshold_same_label": 0,
+      "validation_images_with_a_match": 0,
+      "pairs_within_threshold_excluding_byte_identical": 0,
+      "validation_images_with_a_match_excluding_byte_identical": 0,
+      "nearest_train_distance_per_validation_image": {
+        "6-10": 6,
+        ">10": 353
+      }
+    }
+  },
+  "same_label_and_filename_pairs": {
+    "count": 356,
+    "byte_identical": 0,
+    "different_content": 356,
+    "different_content_but_within_threshold": {
+      "dhash": 0,
+      "phash": 0
+    }
+  }
+}
